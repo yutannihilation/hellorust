@@ -8,6 +8,7 @@ all: clean
 $(SHLIB): $(STATLIB)
 
 $(STATLIB):
+	cargo test -vv --target=$(TARGET) --release --manifest-path=myrustlib/Cargo.toml
 	cargo build --target=$(TARGET) --release --manifest-path=myrustlib/Cargo.toml
 
 clean:
